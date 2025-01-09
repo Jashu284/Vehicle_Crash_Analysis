@@ -1,0 +1,2171 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0910.0334                               -->
+<workbook original-version='18.1' source-build='2024.2.3 (20242.24.0910.0334)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelRelationshipPerfOptions.true...ObjectModelRelationshipPerfOptions />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Motorist Type Selector' datatype='string' name='[Total Pedestrians Involved In accidents Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Motorists Injured&quot;'>
+        <calculation class='tableau' formula='&quot;Motorists Injured&quot;' />
+        <members>
+          <member value='&quot;Motorists Killed&quot;' />
+          <member value='&quot;Motorists Injured&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='PUBLIC' inline='true' name='federated.0mzbibc004dppb180ca9w1y0zntj' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='jya37388.east-us-2.azure.snowflakecomputing.com' name='snowflake.1t580620537a6311kcd9q0lo8zbe'>
+            <connection authentication='Username Password' class='snowflake' dbname='ACCIDENTS' max-varchar-size='' odbc-connect-string-extras='' one-time-sql='' schema='PUBLIC' server='jya37388.east-us-2.azure.snowflakecomputing.com' service='' username='SaipavanKatta' warehouse='COMPUTE_WH' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_CONTRIBUTE' table='[ACCIDENTS].[PUBLIC].[DIM_CONTRIBUTE]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_VEHICLE' table='[ACCIDENTS].[PUBLIC].[DIM_VEHICLE]' type='table' />
+          <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='FACT_ACCIDENTS' table='[ACCIDENTS].[PUBLIC].[FACT_ACCIDENTS]' type='table' />
+          <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_DATE' table='[ACCIDENTS].[PUBLIC].[DIM_DATE]' type='table' />
+          <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_LOCATION' table='[ACCIDENTS].[PUBLIC].[DIM_LOCATION]' type='table' />
+          <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_SOURCE' table='[ACCIDENTS].[PUBLIC].[DIM_SOURCE]' type='table' />
+          <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_TIME' table='[ACCIDENTS].[PUBLIC].[DIM_TIME]' type='table' />
+          <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='FACT_CONTRIBUTINGFACTORS' table='[ACCIDENTS].[PUBLIC].[FACT_CONTRIBUTINGFACTORS]' type='table' />
+          <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_CONTRIBUTE' table='[ACCIDENTS].[PUBLIC].[DIM_CONTRIBUTE]' type='table' />
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[ACCIDENT_ID (FACT_CONTRIBUTINGFACTORS)]' value='[FACT_CONTRIBUTINGFACTORS].[ACCIDENT_ID]' />
+          <map key='[ACCIDENT_ID]' value='[FACT_ACCIDENTS].[ACCIDENT_ID]' />
+          <map key='[CITY]' value='[DIM_LOCATION].[CITY]' />
+          <map key='[CONTRIBUTINGFACTID]' value='[FACT_CONTRIBUTINGFACTORS].[CONTRIBUTINGFACTID]' />
+          <map key='[CONTRIBUTIONCODE]' value='[DIM_CONTRIBUTE].[CONTRIBUTIONCODE]' />
+          <map key='[CONTRIBUTIONDESCRIPTION]' value='[DIM_CONTRIBUTE].[CONTRIBUTIONDESCRIPTION]' />
+          <map key='[CONTRIBUTIONID (DIM_CONTRIBUTE)]' value='[DIM_CONTRIBUTE].[CONTRIBUTIONID]' />
+          <map key='[CONTRIBUTIONID]' value='[FACT_CONTRIBUTINGFACTORS].[CONTRIBUTIONID]' />
+          <map key='[CRASH_ID]' value='[FACT_ACCIDENTS].[CRASH_ID]' />
+          <map key='[CYCLIST_INJURED]' value='[FACT_ACCIDENTS].[CYCLIST_INJURED]' />
+          <map key='[CYCLIST_KILLED]' value='[FACT_ACCIDENTS].[CYCLIST_KILLED]' />
+          <map key='[DATEID (DIM_DATE)]' value='[DIM_DATE].[DATEID]' />
+          <map key='[DATEID]' value='[FACT_ACCIDENTS].[DATEID]' />
+          <map key='[DATE]' value='[DIM_DATE].[DATE]' />
+          <map key='[DAY]' value='[DIM_DATE].[DAY]' />
+          <map key='[DI_CREATE_DATE (DIM_DATE)]' value='[DIM_DATE].[DI_CREATE_DATE]' />
+          <map key='[DI_CREATE_DATE (DIM_LOCATION)]' value='[DIM_LOCATION].[DI_CREATE_DATE]' />
+          <map key='[DI_CREATE_DATE (DIM_TIME)]' value='[DIM_TIME].[DI_CREATE_DATE]' />
+          <map key='[DI_CREATE_DATE]' value='[DIM_VEHICLE].[DI_CREATE_DATE]' />
+          <map key='[DI_PROCESS_ID (DIM_DATE)]' value='[DIM_DATE].[DI_PROCESS_ID]' />
+          <map key='[DI_PROCESS_ID (DIM_LOCATION)]' value='[DIM_LOCATION].[DI_PROCESS_ID]' />
+          <map key='[DI_PROCESS_ID (DIM_TIME)]' value='[DIM_TIME].[DI_PROCESS_ID]' />
+          <map key='[DI_PROCESS_ID]' value='[DIM_VEHICLE].[DI_PROCESS_ID]' />
+          <map key='[DI_WORKFLOW_FILENAME (DIM_DATE)]' value='[DIM_DATE].[DI_WORKFLOW_FILENAME]' />
+          <map key='[DI_WORKFLOW_FILENAME (DIM_LOCATION)]' value='[DIM_LOCATION].[DI_WORKFLOW_FILENAME]' />
+          <map key='[DI_WORKFLOW_FILENAME (DIM_TIME)]' value='[DIM_TIME].[DI_WORKFLOW_FILENAME]' />
+          <map key='[DI_WORKFLOW_FILENAME]' value='[DIM_VEHICLE].[DI_WORKFLOW_FILENAME]' />
+          <map key='[ENDDATE]' value='[DIM_CONTRIBUTE].[ENDDATE]' />
+          <map key='[HOUR]' value='[DIM_TIME].[HOUR]' />
+          <map key='[HOUR_RANGE]' value='[DIM_TIME].[HOUR_RANGE]' />
+          <map key='[ISACTIVE]' value='[DIM_CONTRIBUTE].[ISACTIVE]' />
+          <map key='[LATITUDE]' value='[DIM_LOCATION].[LATITUDE]' />
+          <map key='[LOCATIONID (DIM_LOCATION)]' value='[DIM_LOCATION].[LOCATIONID]' />
+          <map key='[LOCATIONID]' value='[FACT_ACCIDENTS].[LOCATIONID]' />
+          <map key='[LONGITUDE]' value='[DIM_LOCATION].[LONGITUDE]' />
+          <map key='[MONTH]' value='[DIM_DATE].[MONTH]' />
+          <map key='[MOTORCYCLISTS_INJURED]' value='[FACT_ACCIDENTS].[MOTORCYCLISTS_INJURED]' />
+          <map key='[MOTORCYCLISTS_KILLED]' value='[FACT_ACCIDENTS].[MOTORCYCLISTS_KILLED]' />
+          <map key='[MOTORISTS_INJURED]' value='[FACT_ACCIDENTS].[MOTORISTS_INJURED]' />
+          <map key='[MOTORISTS_KILLED]' value='[FACT_ACCIDENTS].[MOTORISTS_KILLED]' />
+          <map key='[PEDESTRIANS_INJURED]' value='[FACT_ACCIDENTS].[PEDESTRIANS_INJURED]' />
+          <map key='[PEDESTRIANS_KILLED]' value='[FACT_ACCIDENTS].[PEDESTRIANS_KILLED]' />
+          <map key='[QUARTER]' value='[DIM_DATE].[QUARTER]' />
+          <map key='[SOURCEID (DIM_SOURCE)]' value='[DIM_SOURCE].[SOURCEID]' />
+          <map key='[SOURCEID]' value='[FACT_ACCIDENTS].[SOURCEID]' />
+          <map key='[SOURCE_DESCRIPTION]' value='[DIM_SOURCE].[SOURCE_DESCRIPTION]' />
+          <map key='[STARTDATE]' value='[DIM_CONTRIBUTE].[STARTDATE]' />
+          <map key='[STREETNAME]' value='[DIM_LOCATION].[STREETNAME]' />
+          <map key='[TIMEID (DIM_TIME)]' value='[DIM_TIME].[TIMEID]' />
+          <map key='[TIMEID]' value='[FACT_ACCIDENTS].[TIMEID]' />
+          <map key='[TOTAL_DEATHS]' value='[FACT_ACCIDENTS].[TOTAL_DEATHS]' />
+          <map key='[TOTAL_INJURIES]' value='[FACT_ACCIDENTS].[TOTAL_INJURIES]' />
+          <map key='[VEHICLEID (DIM_VEHICLE)]' value='[DIM_VEHICLE].[VEHICLEID]' />
+          <map key='[VEHICLEID]' value='[FACT_ACCIDENTS].[VEHICLEID]' />
+          <map key='[VEHICLE_TYPE]' value='[DIM_VEHICLE].[VEHICLE_TYPE]' />
+          <map key='[WEEK]' value='[DIM_DATE].[WEEK]' />
+          <map key='[YEAR]' value='[DIM_DATE].[YEAR]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>VEHICLEID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[VEHICLEID (DIM_VEHICLE)]</local-name>
+            <parent-name>[DIM_VEHICLE]</parent-name>
+            <remote-alias>VEHICLEID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_VEHICLE (ACCIDENTS.DIM_VEHICLE)_DCB59E0DCF2243B9A6049382143EE53A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VEHICLE_TYPE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[VEHICLE_TYPE]</local-name>
+            <parent-name>[DIM_VEHICLE]</parent-name>
+            <remote-alias>VEHICLE_TYPE</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_VEHICLE (ACCIDENTS.DIM_VEHICLE)_DCB59E0DCF2243B9A6049382143EE53A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_PROCESS_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DI_PROCESS_ID]</local-name>
+            <parent-name>[DIM_VEHICLE]</parent-name>
+            <remote-alias>DI_PROCESS_ID</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_VEHICLE (ACCIDENTS.DIM_VEHICLE)_DCB59E0DCF2243B9A6049382143EE53A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_CREATE_DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DI_CREATE_DATE]</local-name>
+            <parent-name>[DIM_VEHICLE]</parent-name>
+            <remote-alias>DI_CREATE_DATE</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_VEHICLE (ACCIDENTS.DIM_VEHICLE)_DCB59E0DCF2243B9A6049382143EE53A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_WORKFLOW_FILENAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DI_WORKFLOW_FILENAME]</local-name>
+            <parent-name>[DIM_VEHICLE]</parent-name>
+            <remote-alias>DI_WORKFLOW_FILENAME</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_VEHICLE (ACCIDENTS.DIM_VEHICLE)_DCB59E0DCF2243B9A6049382143EE53A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ACCIDENT_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ACCIDENT_ID]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>ACCIDENT_ID</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16777216</width>
+            <contains-null>false</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SOURCEID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[SOURCEID]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>SOURCEID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIMEID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TIMEID]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>TIMEID</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATEID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DATEID]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>DATEID</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LOCATIONID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[LOCATIONID]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>LOCATIONID</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VEHICLEID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[VEHICLEID]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>VEHICLEID</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRASH_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CRASH_ID]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>CRASH_ID</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16777216</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MOTORISTS_KILLED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[MOTORISTS_KILLED]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>MOTORISTS_KILLED</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MOTORISTS_INJURED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[MOTORISTS_INJURED]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>MOTORISTS_INJURED</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CYCLIST_KILLED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CYCLIST_KILLED]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>CYCLIST_KILLED</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CYCLIST_INJURED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CYCLIST_INJURED]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>CYCLIST_INJURED</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_DEATHS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTAL_DEATHS]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>TOTAL_DEATHS</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_INJURIES</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTAL_INJURIES]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>TOTAL_INJURIES</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PEDESTRIANS_KILLED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[PEDESTRIANS_KILLED]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>PEDESTRIANS_KILLED</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PEDESTRIANS_INJURED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[PEDESTRIANS_INJURED]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>PEDESTRIANS_INJURED</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MOTORCYCLISTS_KILLED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[MOTORCYCLISTS_KILLED]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>MOTORCYCLISTS_KILLED</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MOTORCYCLISTS_INJURED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[MOTORCYCLISTS_INJURED]</local-name>
+            <parent-name>[FACT_ACCIDENTS]</parent-name>
+            <remote-alias>MOTORCYCLISTS_INJURED</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATEID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DATEID (DIM_DATE)]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>DATEID</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DAY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DAY]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>DAY</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DATE]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>DATE</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WEEK</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[WEEK]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>WEEK</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MONTH</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[MONTH]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>MONTH</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>QUARTER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[QUARTER]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>QUARTER</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YEAR</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[YEAR]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>YEAR</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_PROCESS_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DI_PROCESS_ID (DIM_DATE)]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>DI_PROCESS_ID</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_CREATE_DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DI_CREATE_DATE (DIM_DATE)]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>DI_CREATE_DATE</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_WORKFLOW_FILENAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DI_WORKFLOW_FILENAME (DIM_DATE)]</local-name>
+            <parent-name>[DIM_DATE]</parent-name>
+            <remote-alias>DI_WORKFLOW_FILENAME</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LOCATIONID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[LOCATIONID (DIM_LOCATION)]</local-name>
+            <parent-name>[DIM_LOCATION]</parent-name>
+            <remote-alias>LOCATIONID</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STREETNAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[STREETNAME]</local-name>
+            <parent-name>[DIM_LOCATION]</parent-name>
+            <remote-alias>STREETNAME</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CITY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CITY]</local-name>
+            <parent-name>[DIM_LOCATION]</parent-name>
+            <remote-alias>CITY</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LONGITUDE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LONGITUDE]</local-name>
+            <parent-name>[DIM_LOCATION]</parent-name>
+            <remote-alias>LONGITUDE</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LATITUDE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LATITUDE]</local-name>
+            <parent-name>[DIM_LOCATION]</parent-name>
+            <remote-alias>LATITUDE</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_PROCESS_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DI_PROCESS_ID (DIM_LOCATION)]</local-name>
+            <parent-name>[DIM_LOCATION]</parent-name>
+            <remote-alias>DI_PROCESS_ID</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_CREATE_DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DI_CREATE_DATE (DIM_LOCATION)]</local-name>
+            <parent-name>[DIM_LOCATION]</parent-name>
+            <remote-alias>DI_CREATE_DATE</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_WORKFLOW_FILENAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DI_WORKFLOW_FILENAME (DIM_LOCATION)]</local-name>
+            <parent-name>[DIM_LOCATION]</parent-name>
+            <remote-alias>DI_WORKFLOW_FILENAME</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SOURCEID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[SOURCEID (DIM_SOURCE)]</local-name>
+            <parent-name>[DIM_SOURCE]</parent-name>
+            <remote-alias>SOURCEID</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_SOURCE (ACCIDENTS.DIM_SOURCE)_92CE441B57004B9BBE84F3CAEDFBA9C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SOURCE_DESCRIPTION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SOURCE_DESCRIPTION]</local-name>
+            <parent-name>[DIM_SOURCE]</parent-name>
+            <remote-alias>SOURCE_DESCRIPTION</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_SOURCE (ACCIDENTS.DIM_SOURCE)_92CE441B57004B9BBE84F3CAEDFBA9C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIMEID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TIMEID (DIM_TIME)]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>TIMEID</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME (ACCIDENTS.DIM_TIME)_5BBCD19604E74F97AF8D78EB3BA8D36F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HOUR</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[HOUR]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>HOUR</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME (ACCIDENTS.DIM_TIME)_5BBCD19604E74F97AF8D78EB3BA8D36F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HOUR_RANGE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[HOUR_RANGE]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>HOUR_RANGE</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16777216</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME (ACCIDENTS.DIM_TIME)_5BBCD19604E74F97AF8D78EB3BA8D36F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_PROCESS_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DI_PROCESS_ID (DIM_TIME)]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>DI_PROCESS_ID</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16777216</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME (ACCIDENTS.DIM_TIME)_5BBCD19604E74F97AF8D78EB3BA8D36F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_CREATE_DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DI_CREATE_DATE (DIM_TIME)]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>DI_CREATE_DATE</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME (ACCIDENTS.DIM_TIME)_5BBCD19604E74F97AF8D78EB3BA8D36F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DI_WORKFLOW_FILENAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DI_WORKFLOW_FILENAME (DIM_TIME)]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>DI_WORKFLOW_FILENAME</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16777216</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME (ACCIDENTS.DIM_TIME)_5BBCD19604E74F97AF8D78EB3BA8D36F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CONTRIBUTINGFACTID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CONTRIBUTINGFACTID]</local-name>
+            <parent-name>[FACT_CONTRIBUTINGFACTORS]</parent-name>
+            <remote-alias>CONTRIBUTINGFACTID</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CONTRIBUTINGFACTORS (ACCIDENTS.FACT_CONTRIBUTINGFACTORS)_48D60395735D4BB3898F4E3CBEA3DFC2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CONTRIBUTIONID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CONTRIBUTIONID]</local-name>
+            <parent-name>[FACT_CONTRIBUTINGFACTORS]</parent-name>
+            <remote-alias>CONTRIBUTIONID</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CONTRIBUTINGFACTORS (ACCIDENTS.FACT_CONTRIBUTINGFACTORS)_48D60395735D4BB3898F4E3CBEA3DFC2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ACCIDENT_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ACCIDENT_ID (FACT_CONTRIBUTINGFACTORS)]</local-name>
+            <parent-name>[FACT_CONTRIBUTINGFACTORS]</parent-name>
+            <remote-alias>ACCIDENT_ID</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>16777216</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CONTRIBUTINGFACTORS (ACCIDENTS.FACT_CONTRIBUTINGFACTORS)_48D60395735D4BB3898F4E3CBEA3DFC2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CONTRIBUTIONID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CONTRIBUTIONID (DIM_CONTRIBUTE)]</local-name>
+            <parent-name>[DIM_CONTRIBUTE]</parent-name>
+            <remote-alias>CONTRIBUTIONID</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_CONTRIBUTE (ACCIDENTS.DIM_CONTRIBUTE)_4F31B81DC38F4F4BAFC0021A533BBD64]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CONTRIBUTIONCODE</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CONTRIBUTIONCODE]</local-name>
+            <parent-name>[DIM_CONTRIBUTE]</parent-name>
+            <remote-alias>CONTRIBUTIONCODE</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_CONTRIBUTE (ACCIDENTS.DIM_CONTRIBUTE)_4F31B81DC38F4F4BAFC0021A533BBD64]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CONTRIBUTIONDESCRIPTION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CONTRIBUTIONDESCRIPTION]</local-name>
+            <parent-name>[DIM_CONTRIBUTE]</parent-name>
+            <remote-alias>CONTRIBUTIONDESCRIPTION</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>500</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_CONTRIBUTE (ACCIDENTS.DIM_CONTRIBUTE)_4F31B81DC38F4F4BAFC0021A533BBD64]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STARTDATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[STARTDATE]</local-name>
+            <parent-name>[DIM_CONTRIBUTE]</parent-name>
+            <remote-alias>STARTDATE</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_CONTRIBUTE (ACCIDENTS.DIM_CONTRIBUTE)_4F31B81DC38F4F4BAFC0021A533BBD64]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ENDDATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[ENDDATE]</local-name>
+            <parent-name>[DIM_CONTRIBUTE]</parent-name>
+            <remote-alias>ENDDATE</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_CONTRIBUTE (ACCIDENTS.DIM_CONTRIBUTE)_4F31B81DC38F4F4BAFC0021A533BBD64]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ISACTIVE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ISACTIVE]</local-name>
+            <parent-name>[DIM_CONTRIBUTE]</parent-name>
+            <remote-alias>ISACTIVE</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_CONTRIBUTE (ACCIDENTS.DIM_CONTRIBUTE)_4F31B81DC38F4F4BAFC0021A533BBD64]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Accident Id (Fact Contributingfactors)' datatype='string' name='[ACCIDENT_ID (FACT_CONTRIBUTINGFACTORS)]' role='dimension' type='nominal' />
+      <column caption='Accident Id' datatype='string' name='[ACCIDENT_ID]' role='dimension' type='nominal' />
+      <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Contributingfactid' datatype='integer' name='[CONTRIBUTINGFACTID]' role='measure' type='quantitative' />
+      <column caption='Contributioncode' datatype='integer' name='[CONTRIBUTIONCODE]' role='measure' type='quantitative' />
+      <column caption='Contributiondescription' datatype='string' name='[CONTRIBUTIONDESCRIPTION]' role='dimension' type='nominal' />
+      <column caption='Contributionid (Dim Contribute)' datatype='integer' name='[CONTRIBUTIONID (DIM_CONTRIBUTE)]' role='measure' type='quantitative' />
+      <column caption='Contributionid' datatype='integer' name='[CONTRIBUTIONID]' role='measure' type='quantitative' />
+      <column caption='Crash Id' datatype='string' name='[CRASH_ID]' role='dimension' type='nominal' />
+      <column caption='Cyclist Injured' datatype='integer' name='[CYCLIST_INJURED]' role='measure' type='quantitative' />
+      <column caption='Cyclist Killed' datatype='integer' name='[CYCLIST_KILLED]' role='measure' type='quantitative' />
+      <column caption='Total Pedestrians Involved In accidents' datatype='integer' name='[Calculation_94575615368794113]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([PEDESTRIANS_INJURED]) + SUM([PEDESTRIANS_KILLED])' />
+      </column>
+      <column caption='Selected Motorist Type' datatype='integer' name='[Calculation_94575615374266370]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Total Pedestrians Involved In accidents Parameter]&#13;&#10;WHEN &quot;Motorists Injured&quot; THEN [MOTORISTS_INJURED]&#13;&#10;WHEN &quot;Motorists Killed&quot; THEN [MOTORISTS_KILLED]&#13;&#10;END' />
+      </column>
+      <column caption='Dateid (Dim Date)' datatype='integer' name='[DATEID (DIM_DATE)]' role='measure' type='quantitative' />
+      <column caption='Dateid' datatype='integer' name='[DATEID]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[DAY]' role='dimension' type='quantitative' />
+      <column caption='Di Create Date (Dim Date)' datatype='date' name='[DI_CREATE_DATE (DIM_DATE)]' role='dimension' type='ordinal' />
+      <column caption='Di Create Date (Dim Location)' datatype='date' name='[DI_CREATE_DATE (DIM_LOCATION)]' role='dimension' type='ordinal' />
+      <column caption='Di Create Date (Dim Time)' datatype='date' name='[DI_CREATE_DATE (DIM_TIME)]' role='dimension' type='ordinal' />
+      <column caption='Di Create Date' datatype='date' name='[DI_CREATE_DATE]' role='dimension' type='ordinal' />
+      <column caption='Di Process Id (Dim Date)' datatype='string' name='[DI_PROCESS_ID (DIM_DATE)]' role='dimension' type='nominal' />
+      <column caption='Di Process Id (Dim Location)' datatype='string' name='[DI_PROCESS_ID (DIM_LOCATION)]' role='dimension' type='nominal' />
+      <column caption='Di Process Id (Dim Time)' datatype='string' name='[DI_PROCESS_ID (DIM_TIME)]' role='dimension' type='nominal' />
+      <column caption='Di Process Id' datatype='string' name='[DI_PROCESS_ID]' role='dimension' type='nominal' />
+      <column caption='Di Workflow Filename (Dim Date)' datatype='string' name='[DI_WORKFLOW_FILENAME (DIM_DATE)]' role='dimension' type='nominal' />
+      <column caption='Di Workflow Filename (Dim Location)' datatype='string' name='[DI_WORKFLOW_FILENAME (DIM_LOCATION)]' role='dimension' type='nominal' />
+      <column caption='Di Workflow Filename (Dim Time)' datatype='string' name='[DI_WORKFLOW_FILENAME (DIM_TIME)]' role='dimension' type='nominal' />
+      <column caption='Di Workflow Filename' datatype='string' name='[DI_WORKFLOW_FILENAME]' role='dimension' type='nominal' />
+      <column caption='Enddate' datatype='date' name='[ENDDATE]' role='dimension' type='ordinal' />
+      <column caption='Hour' datatype='integer' name='[HOUR]' role='measure' type='quantitative' />
+      <column caption='Hour Range' datatype='string' name='[HOUR_RANGE]' role='dimension' type='nominal' />
+      <column caption='Isactive' datatype='string' name='[ISACTIVE]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Latitude' datatype='real' name='[LATITUDE]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='Locationid (Dim Location)' datatype='integer' name='[LOCATIONID (DIM_LOCATION)]' role='measure' type='quantitative' />
+      <column caption='Locationid' datatype='integer' name='[LOCATIONID]' role='measure' type='quantitative' />
+      <column aggregation='Avg' caption='Longitude' datatype='real' name='[LONGITUDE]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+      <column caption='Motorcyclists Injured' datatype='integer' name='[MOTORCYCLISTS_INJURED]' role='measure' type='quantitative' />
+      <column caption='Motorcyclists Killed' datatype='integer' name='[MOTORCYCLISTS_KILLED]' role='measure' type='quantitative' />
+      <column caption='Motorists Injured' datatype='integer' name='[MOTORISTS_INJURED]' role='measure' type='quantitative' />
+      <column caption='Motorists Killed' datatype='integer' name='[MOTORISTS_KILLED]' role='measure' type='quantitative' />
+      <column caption='Pedestrians Injured' datatype='integer' name='[PEDESTRIANS_INJURED]' role='measure' type='quantitative' />
+      <column caption='Pedestrians Killed' datatype='integer' name='[PEDESTRIANS_KILLED]' role='measure' type='quantitative' />
+      <column caption='Quarter' datatype='integer' name='[QUARTER]' role='dimension' type='quantitative' />
+      <column caption='Sourceid (Dim Source)' datatype='integer' name='[SOURCEID (DIM_SOURCE)]' role='measure' type='quantitative' />
+      <column caption='Sourceid' datatype='integer' name='[SOURCEID]' role='measure' type='quantitative' />
+      <column caption='Source Description' datatype='string' name='[SOURCE_DESCRIPTION]' role='dimension' type='nominal' />
+      <column caption='Startdate' datatype='date' name='[STARTDATE]' role='dimension' type='ordinal' />
+      <column caption='Streetname' datatype='string' name='[STREETNAME]' role='dimension' type='nominal' />
+      <column caption='Timeid (Dim Time)' datatype='integer' name='[TIMEID (DIM_TIME)]' role='measure' type='quantitative' />
+      <column caption='Timeid' datatype='integer' name='[TIMEID]' role='measure' type='quantitative' />
+      <column caption='Total Deaths' datatype='integer' name='[TOTAL_DEATHS]' role='measure' type='quantitative' />
+      <column caption='Total Injuries' datatype='integer' name='[TOTAL_INJURIES]' role='measure' type='quantitative' />
+      <column caption='Vehicleid (Dim Vehicle)' datatype='integer' name='[VEHICLEID (DIM_VEHICLE)]' role='measure' type='quantitative' />
+      <column caption='Vehicleid' datatype='integer' name='[VEHICLEID]' role='measure' type='quantitative' />
+      <column caption='Vehicle Type' datatype='string' name='[VEHICLE_TYPE]' role='dimension' type='nominal' />
+      <column caption='Week' datatype='integer' name='[WEEK]' role='dimension' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_CONTRIBUTE' datatype='table' name='[__tableau_internal_object_id__].[DIM_CONTRIBUTE (ACCIDENTS.DIM_CONTRIBUTE)_4F31B81DC38F4F4BAFC0021A533BBD64]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_DATE' datatype='table' name='[__tableau_internal_object_id__].[DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_LOCATION' datatype='table' name='[__tableau_internal_object_id__].[DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_SOURCE' datatype='table' name='[__tableau_internal_object_id__].[DIM_SOURCE (ACCIDENTS.DIM_SOURCE)_92CE441B57004B9BBE84F3CAEDFBA9C6]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_TIME' datatype='table' name='[__tableau_internal_object_id__].[DIM_TIME (ACCIDENTS.DIM_TIME)_5BBCD19604E74F97AF8D78EB3BA8D36F]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_VEHICLE' datatype='table' name='[__tableau_internal_object_id__].[DIM_VEHICLE (ACCIDENTS.DIM_VEHICLE)_DCB59E0DCF2243B9A6049382143EE53A]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='FACT_ACCIDENTS' datatype='table' name='[__tableau_internal_object_id__].[FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='FACT_CONTRIBUTINGFACTORS' datatype='table' name='[__tableau_internal_object_id__].[FACT_CONTRIBUTINGFACTORS (ACCIDENTS.FACT_CONTRIBUTINGFACTORS)_48D60395735D4BB3898F4E3CBEA3DFC2]' role='measure' type='quantitative' />
+      <column-instance column='[CITY]' derivation='None' name='[none:CITY:nk]' pivot='key' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:CITY:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;NYC&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Montgomery&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Chicago&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Austin&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;USA&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='CONTRIBUTIONID (DIM_CONTRIBUTE)' />
+        <field-sort-custom-order field='CONTRIBUTIONCODE' />
+        <field-sort-custom-order field='CONTRIBUTIONDESCRIPTION' />
+        <field-sort-custom-order field='STARTDATE' />
+        <field-sort-custom-order field='ENDDATE' />
+        <field-sort-custom-order field='ISACTIVE' />
+      </field-sort-info>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Motorist Type Selector' datatype='string' name='[Total Pedestrians Involved In accidents Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Motorists Injured&quot;'>
+          <calculation class='tableau' formula='&quot;Motorists Injured&quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='DIM_CONTRIBUTE' id='DIM_CONTRIBUTE (ACCIDENTS.DIM_CONTRIBUTE)_4F31B81DC38F4F4BAFC0021A533BBD64'>
+            <properties context=''>
+              <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_CONTRIBUTE' table='[ACCIDENTS].[PUBLIC].[DIM_CONTRIBUTE]' type='table' />
+            </properties>
+          </object>
+          <object caption='DIM_DATE' id='DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1'>
+            <properties context=''>
+              <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_DATE' table='[ACCIDENTS].[PUBLIC].[DIM_DATE]' type='table' />
+            </properties>
+          </object>
+          <object caption='DIM_LOCATION' id='DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E'>
+            <properties context=''>
+              <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_LOCATION' table='[ACCIDENTS].[PUBLIC].[DIM_LOCATION]' type='table' />
+            </properties>
+          </object>
+          <object caption='DIM_SOURCE' id='DIM_SOURCE (ACCIDENTS.DIM_SOURCE)_92CE441B57004B9BBE84F3CAEDFBA9C6'>
+            <properties context=''>
+              <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_SOURCE' table='[ACCIDENTS].[PUBLIC].[DIM_SOURCE]' type='table' />
+            </properties>
+          </object>
+          <object caption='DIM_TIME' id='DIM_TIME (ACCIDENTS.DIM_TIME)_5BBCD19604E74F97AF8D78EB3BA8D36F'>
+            <properties context=''>
+              <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_TIME' table='[ACCIDENTS].[PUBLIC].[DIM_TIME]' type='table' />
+            </properties>
+          </object>
+          <object caption='DIM_VEHICLE' id='DIM_VEHICLE (ACCIDENTS.DIM_VEHICLE)_DCB59E0DCF2243B9A6049382143EE53A'>
+            <properties context=''>
+              <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='DIM_VEHICLE' table='[ACCIDENTS].[PUBLIC].[DIM_VEHICLE]' type='table' />
+            </properties>
+          </object>
+          <object caption='FACT_ACCIDENTS' id='FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569'>
+            <properties context=''>
+              <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='FACT_ACCIDENTS' table='[ACCIDENTS].[PUBLIC].[FACT_ACCIDENTS]' type='table' />
+            </properties>
+          </object>
+          <object caption='FACT_CONTRIBUTINGFACTORS' id='FACT_CONTRIBUTINGFACTORS (ACCIDENTS.FACT_CONTRIBUTINGFACTORS)_48D60395735D4BB3898F4E3CBEA3DFC2'>
+            <properties context=''>
+              <relation connection='snowflake.1t580620537a6311kcd9q0lo8zbe' name='FACT_CONTRIBUTINGFACTORS' table='[ACCIDENTS].[PUBLIC].[FACT_CONTRIBUTINGFACTORS]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[CONTRIBUTIONID]' />
+              <expression op='[CONTRIBUTIONID (DIM_CONTRIBUTE)]' />
+            </expression>
+            <first-end-point object-id='FACT_CONTRIBUTINGFACTORS (ACCIDENTS.FACT_CONTRIBUTINGFACTORS)_48D60395735D4BB3898F4E3CBEA3DFC2' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_CONTRIBUTE (ACCIDENTS.DIM_CONTRIBUTE)_4F31B81DC38F4F4BAFC0021A533BBD64' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[DATEID]' />
+              <expression op='[DATEID (DIM_DATE)]' />
+            </expression>
+            <first-end-point object-id='FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_DATE (ACCIDENTS.DIM_DATE)_58C989AC71714FC3BCC97919B83AC9E1' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[LOCATIONID]' />
+              <expression op='[LOCATIONID (DIM_LOCATION)]' />
+            </expression>
+            <first-end-point object-id='FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_LOCATION (ACCIDENTS.DIM_LOCATION)_B8B090922DCC4CAEA28865F98196839E' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[SOURCEID]' />
+              <expression op='[SOURCEID (DIM_SOURCE)]' />
+            </expression>
+            <first-end-point object-id='FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_SOURCE (ACCIDENTS.DIM_SOURCE)_92CE441B57004B9BBE84F3CAEDFBA9C6' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[TIMEID]' />
+              <expression op='[TIMEID (DIM_TIME)]' />
+            </expression>
+            <first-end-point object-id='FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_TIME (ACCIDENTS.DIM_TIME)_5BBCD19604E74F97AF8D78EB3BA8D36F' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[VEHICLEID (DIM_VEHICLE)]' />
+              <expression op='[VEHICLEID]' />
+            </expression>
+            <first-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_VEHICLE (ACCIDENTS.DIM_VEHICLE)_DCB59E0DCF2243B9A6049382143EE53A' unique-key='true' />
+            <second-end-point object-id='FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[ACCIDENT_ID]' />
+              <expression op='[ACCIDENT_ID (FACT_CONTRIBUTINGFACTORS)]' />
+            </expression>
+            <first-end-point object-id='FACT_ACCIDENTS (ACCIDENTS.FACT_ACCIDENTS)_E4B7B175E5EE492DAD0F2881D290E569' />
+            <second-end-point object-id='FACT_CONTRIBUTINGFACTORS (ACCIDENTS.FACT_CONTRIBUTINGFACTORS)_48D60395735D4BB3898F4E3CBEA3DFC2' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Total Accidents by City</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PUBLIC' name='federated.0mzbibc004dppb180ca9w1y0zntj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0mzbibc004dppb180ca9w1y0zntj'>
+            <column caption='Accident Id' datatype='string' name='[ACCIDENT_ID]' role='dimension' type='nominal' />
+            <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[ACCIDENT_ID]' derivation='Count' name='[cnt:ACCIDENT_ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CITY]' derivation='None' name='[none:CITY:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Austin&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Chicago&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;NYC&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</rows>
+        <cols>[federated.0mzbibc004dppb180ca9w1y0zntj].[cnt:ACCIDENT_ID:qk]</cols>
+      </table>
+      <simple-id uuid='{206A1882-C2F3-4D81-8C9B-D906331FF441}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PUBLIC' name='federated.0mzbibc004dppb180ca9w1y0zntj' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0mzbibc004dppb180ca9w1y0zntj'>
+            <column caption='Accident Id' datatype='string' name='[ACCIDENT_ID]' role='dimension' type='nominal' />
+            <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column aggregation='Avg' caption='Latitude' datatype='real' name='[LATITUDE]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Longitude' datatype='real' name='[LONGITUDE]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column-instance column='[ACCIDENT_ID]' derivation='Count' name='[cnt:ACCIDENT_ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CITY]' derivation='None' name='[none:CITY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[LATITUDE]' derivation='None' name='[none:LATITUDE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[LONGITUDE]' derivation='None' name='[none:LONGITUDE:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Austin&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Chicago&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Montgomery&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;NYC&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:LONGITUDE:qk]' field-type='quantitative' max='1106514.9447948281' min='-15416561.777531825' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:LATITUDE:qk]' field-type='quantitative' max='6675162.8633226305' min='-1152453.1013543839' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0mzbibc004dppb180ca9w1y0zntj].[cnt:ACCIDENT_ID:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:LATITUDE:qk]</rows>
+        <cols>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:LONGITUDE:qk]</cols>
+      </table>
+      <simple-id uuid='{1DD9CB83-137C-46F6-A807-F31D3F7674BB}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PUBLIC' name='federated.0mzbibc004dppb180ca9w1y0zntj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0mzbibc004dppb180ca9w1y0zntj'>
+            <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column caption='Total Injuries' datatype='integer' name='[TOTAL_INJURIES]' role='measure' type='quantitative' />
+            <column-instance column='[CITY]' derivation='None' name='[none:CITY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TOTAL_INJURIES]' derivation='Sum' name='[sum:TOTAL_INJURIES:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Austin&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Chicago&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;NYC&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]' />
+              <text column='[federated.0mzbibc004dppb180ca9w1y0zntj].[sum:TOTAL_INJURIES:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0mzbibc004dppb180ca9w1y0zntj].[sum:TOTAL_INJURIES:qk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{1252CC6A-3DE8-47E3-91A9-4BF4A532FE98}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Total Pedestrian Impact in Chicago</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PUBLIC' name='federated.0mzbibc004dppb180ca9w1y0zntj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0mzbibc004dppb180ca9w1y0zntj'>
+            <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column caption='Total Pedestrians Involved In accidents' datatype='integer' name='[Calculation_94575615368794113]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([PEDESTRIANS_INJURED]) + SUM([PEDESTRIANS_KILLED])' />
+            </column>
+            <column caption='Pedestrians Injured' datatype='integer' name='[PEDESTRIANS_INJURED]' role='measure' type='quantitative' />
+            <column caption='Pedestrians Killed' datatype='integer' name='[PEDESTRIANS_KILLED]' role='measure' type='quantitative' />
+            <column-instance column='[CITY]' derivation='None' name='[none:CITY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_94575615368794113]' derivation='User' name='[usr:Calculation_94575615368794113:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Austin&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Chicago&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;NYC&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0mzbibc004dppb180ca9w1y0zntj].[usr:Calculation_94575615368794113:qk]</rows>
+        <cols>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</cols>
+      </table>
+      <simple-id uuid='{E7E39655-E46E-4733-89EE-8E23774765F8}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PUBLIC' name='federated.0mzbibc004dppb180ca9w1y0zntj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0mzbibc004dppb180ca9w1y0zntj'>
+            <column caption='Accident Id' datatype='string' name='[ACCIDENT_ID]' role='dimension' type='nominal' />
+            <column caption='Quarter' datatype='integer' name='[QUARTER]' role='dimension' type='quantitative' />
+            <column-instance column='[ACCIDENT_ID]' derivation='Count' name='[cnt:ACCIDENT_ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[QUARTER]' derivation='None' name='[none:QUARTER:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0mzbibc004dppb180ca9w1y0zntj].[cnt:ACCIDENT_ID:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0mzbibc004dppb180ca9w1y0zntj].[cnt:ACCIDENT_ID:qk]</rows>
+        <cols>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:QUARTER:qk]</cols>
+      </table>
+      <simple-id uuid='{AC42E06F-1D4E-4B6F-AB81-D884A85551EF}' />
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PUBLIC' name='federated.0mzbibc004dppb180ca9w1y0zntj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0mzbibc004dppb180ca9w1y0zntj'>
+            <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column caption='Total Injuries' datatype='integer' name='[TOTAL_INJURIES]' role='measure' type='quantitative' />
+            <column-instance column='[CITY]' derivation='None' name='[none:CITY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TOTAL_INJURIES]' derivation='Sum' name='[sum:TOTAL_INJURIES:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0mzbibc004dppb180ca9w1y0zntj].[sum:TOTAL_INJURIES:qk]</rows>
+        <cols>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</cols>
+      </table>
+      <simple-id uuid='{0FD3A23A-B96E-494C-BD0B-8557855028A4}' />
+    </worksheet>
+    <worksheet name='Sheet 7'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PUBLIC' name='federated.0mzbibc004dppb180ca9w1y0zntj' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Motorist Type Selector' datatype='string' name='[Total Pedestrians Involved In accidents Parameter]' param-domain-type='list' role='measure' type='nominal' value='&quot;Motorists Injured&quot;'>
+              <calculation class='tableau' formula='&quot;Motorists Injured&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0mzbibc004dppb180ca9w1y0zntj'>
+            <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column caption='Selected Motorist Type' datatype='integer' name='[Calculation_94575615374266370]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Total Pedestrians Involved In accidents Parameter]&#13;&#10;WHEN &quot;Motorists Injured&quot; THEN [MOTORISTS_INJURED]&#13;&#10;WHEN &quot;Motorists Killed&quot; THEN [MOTORISTS_KILLED]&#13;&#10;END' />
+            </column>
+            <column caption='Motorists Injured' datatype='integer' name='[MOTORISTS_INJURED]' role='measure' type='quantitative' />
+            <column caption='Motorists Killed' datatype='integer' name='[MOTORISTS_KILLED]' role='measure' type='quantitative' />
+            <column-instance column='[CITY]' derivation='None' name='[none:CITY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_94575615374266370]' derivation='Sum' name='[sum:Calculation_94575615374266370:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0mzbibc004dppb180ca9w1y0zntj].[sum:Calculation_94575615374266370:qk]</rows>
+        <cols>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</cols>
+      </table>
+      <simple-id uuid='{1C5F1D6E-CD23-448B-8A4E-6C6A3965F008}' />
+    </worksheet>
+    <worksheet name='Sheet 8'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Total Deaths by City</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PUBLIC' name='federated.0mzbibc004dppb180ca9w1y0zntj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0mzbibc004dppb180ca9w1y0zntj'>
+            <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column caption='Total Deaths' datatype='integer' name='[TOTAL_DEATHS]' role='measure' type='quantitative' />
+            <column-instance column='[CITY]' derivation='None' name='[none:CITY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TOTAL_DEATHS]' derivation='Sum' name='[sum:TOTAL_DEATHS:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Austin&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;Chicago&quot;' />
+              <groupfilter function='member' level='[none:CITY:nk]' member='&quot;NYC&quot;' />
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]' direction='DESC' using='[federated.0mzbibc004dppb180ca9w1y0zntj].[sum:TOTAL_DEATHS:qk]' />
+          <slices>
+            <column>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0mzbibc004dppb180ca9w1y0zntj].[sum:TOTAL_DEATHS:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0mzbibc004dppb180ca9w1y0zntj].[sum:TOTAL_DEATHS:qk]</rows>
+        <cols>[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]</cols>
+      </table>
+      <simple-id uuid='{40C91256-3BCA-4E54-B750-D9298A25D5C0}' />
+    </worksheet>
+    <worksheet name='Sheet 9'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Accidents By Weekdays</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PUBLIC' name='federated.0mzbibc004dppb180ca9w1y0zntj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0mzbibc004dppb180ca9w1y0zntj'>
+            <column caption='Accident Id' datatype='string' name='[ACCIDENT_ID]' role='dimension' type='nominal' />
+            <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+            <column-instance column='[ACCIDENT_ID]' derivation='Count' name='[cnt:ACCIDENT_ID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DATE]' derivation='Weekday' name='[wd:DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0mzbibc004dppb180ca9w1y0zntj].[cnt:ACCIDENT_ID:qk]</rows>
+        <cols>[federated.0mzbibc004dppb180ca9w1y0zntj].[wd:DATE:ok]</cols>
+      </table>
+      <simple-id uuid='{154B9F3A-A4C9-441B-801E-6FA36F7474DB}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BFCA9E69-CBF1-4BFE-8485-8565CF9E119B}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4DC4716C-F585-4DE9-B383-099203FF3835}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0mzbibc004dppb180ca9w1y0zntj].[none:CITY:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{72F3A327-CB76-4942-B3C7-DBA7797424FB}' />
+    </window>
+    <window class='worksheet' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{07E937EB-A3B8-4FFD-98FE-3C99189CEBC2}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{26BF0A09-BA8B-4390-AB44-25A5CF8CE747}' />
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2AF21597-D0B1-41B5-AB9D-8E9ECEFD7DDE}' />
+    </window>
+    <window class='worksheet' name='Sheet 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Total Pedestrians Involved In accidents Parameter]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1872AA86-07EA-4881-9C3A-43D660775BE0}' />
+    </window>
+    <window class='worksheet' name='Sheet 8'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CECE73D4-67BF-49DC-B85D-A686651E4A24}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 9'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FE051F33-4400-49E0-91D8-C3E6D37F5FD4}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 9' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nO3dd3AcV2Ln8W/3TE+eAWYGAwxyIAGCALNEUqQCSVGi4q60Qevd1Wlv7d21
+      r8rlqvPdH75g3z9X5fOFLft8V/aV7fWtvfZtVNiglVaZYg6gSIIAkXPG5By77w+AQRQlUcSA
+      GBDvU2KBmsF0vxn2b/p1vyRpmqYhCGuQJEmSvNKFEISVJAIgrGkiAMKaJgIgrGkiAMKaJgIg
+      rGkiAMKaJgIgrGkiAMKaJgIgrGkiAMKapl/pAgh3QpbZ3hP88se/oCcC6M1UbXqcb3xlD2WG
+      tf0duLbf/ZqhkghOEMja2PPMt/nml/dj7fo+f/zdN/B9zCtyqRhvf++P+OezwTta0jtNnAHW
+      EKPdRe26Vtq9zTTXa4z87v/l9e6DPN+qI5/LkM2paEgYTQayyRjzE4NM1URJpCwoioIiQzaT
+      IZdXQdahVxT0Ohlppd/YEogArEGSrMPoOcC+Hd/l7Z4pnitL88ZPv8eLx0eJqyr//k//iKG/
+      +S7fPzlJ9vS/5vTr9/Hb33yB/Z5JfvJ3/8hbXbNoJXXs+9K3+PrBVmyr+ChaxUUXlkYGSSMU
+      iSEZy2m+72m+tU2GZA/9+To+98d/jfQX32Fs7//mDw+UgzrHm9/9GT2OXfz279cSGznO0Vd/
+      Qsfm/8S+qpV+L7dPBGCtyk0xM2tk/QMeor5+zrzzFoNJI0YliMfzBGD48O9n5xmfCBOQLnMi
+      MY5Ogvp72nArK1L6ghEBWIPySR897/+YI/Fd/G67mflLPYwFy3ny93+HVt1x3kqZkQBZkolF
+      oqTzHgy6EsrcFsq8D/O739hPmT5DLBxBNa/0u1kaSQyJXAvSDJ98kb/9Py8TdLXgNIFs9LDj
+      8S/w1O4qwl3v8cN/fJlhXR0tbUYs977A1xqt9P76f/BXr/twte/m8089SkP4CH/346NEJTMG
+      owlv670ceuwJml0r/f5ujyRJkgjAmqCSivqZGpskkgVkBWtpBXU1bowy5NMx5qYmmI9qWF02
+      rK5Kys06stE5RsfnSOodVFdV4TZlmZ2aYD6UQpX02FzlVFZ4sKzSapAIgLCmiUHxwponAiCs
+      aSIAn0DTNPL5/EoXQ1hGIgCfQNM0stnsShdDWEYiAMKaJgIgrGkiAMKaJgIgrGkiAMKaJgIg
+      rGkiAMKaJgIgrGkiAMKaJgIgrGkiAMKaJgIgrGkiAMKaJgbFC0UpEk8zPhemxGaiym1Hlpdn
+      +i0RAKHoxFMZ3js/wrsfjOC0m/iDL+7GaTcty75EFUgoKtlcnnN9M7x6op+hqSAdvdNcGppd
+      tv2JAAhFQ9M0hqZDvHzkMrOB2NXH3z0/smz7FAEQioKmafgjSX74VidDU0E0uDrp7qWhOWau
+      C0QhFVUANDVLMhYmHI6Qyt34pEYuHSMYCJHIqIsPqmSTEfy+eXz+EPF0noU5XjTUTIJQwMf8
+      vI9wIsvCK/KkUmmy2fziJlVSsTCJrJgZZqUl0ln+6Y2LfNA/g06WeXhHI1/ctxGH1Ugml+ed
+      c8Msxww+RXQRnGFuqIuey71MRlTW7f86u6uvPavmU4ydfJGXziXZ/PjXeWyjAzU5R+d773K0
+      bwZV72Dd9ofYv7MZuxRn7MIx3j3TQygDrsbdHHp0F5WWABcuTFJe3kBjYynZyBjH3jiJ86Hn
+      2FGhW7m3vsZlsnneODPIux+MoJMl2hs8PHlfM1aTwrm+aSLxNKcvT/H5vS3YLMaC7ruIzgBp
+      fJNBXK272bWx4iPPpnz99EwYaN98JRUqwZ4Oumnh+d/7A779pb1Y5y/QNZMiPdfD+WmF+579
+      Fn/wr15gk9LD6a4g6vUbzIXpP32WRPNBtomDf8Xk8iqnL0/y4uHLSEC1x8HTe1tYX+3E67bR
+      UutGr5PxhxNcGJwr+P6LKAB22vc9zOZqO7obS6UG6Tndj337/TTYrtQMU0xNwYbNDZQY9Vjd
+      1dSu85CYCRGcjlJaX02Vx4reWELTts0ocxOkrm4wx/zl0/TkN7Bvi6eYPoQ1RdM0uobn+Nl7
+      3cQSGRxWI0/vaWZ7sxdJkpAlib2bajEqOhLpLGd7p8jkCjtNTRFVgT6OSvDyGSad23m43sJ4
+      55XHMyQlO06jHlkCSa/HYDQjz4aJmg3YSgzo9RJIEnrFgSU1SZQqCAzw3pmTJMwVHHymGcd1
+      R38ul/vIPECqqpJMJu/Yu11LxueivHK0h/H5CJIkcXBHPTtbKshlM+QWZ6OpL7fhdVkZnAox
+      NBVgaMJHfYWjYGUo/gBE+zk2bOWefXVYpdB1T0jIaB+q1miyhKwoKLKGqmlcuZWgSRKSYlh4
+      s1YPze1VxCa7mAznaC279npZlpGkay2OmqahqiqKskpnfy1i/kiSN84Oc2lonlxe5f7NtTzz
+      QCs284fXJVAUhQe31DM4FcIXTtA96md9jbtg5Sj6AExeOMbZ4z2cOPEaEnky6RQ52wTys4fw
+      aH5mY2maykDKZEgFA6TsDdjkJL2hFOmMhtWokolN45Pd2ACMJVSX11O12czLP3uLwepnWbfY
+      yCjLH64MqaqKJEno9UX/Ma0qyXSWo50THL00TiaXp6mylBce3UKp3XLT339wSz3//GYn8WSW
+      gakgsVSOUlthWoaL6F82SyKcIJOIEIsnSZhChKIGPLu/wZ/sAU0DkgF6O08xVvIgBzeWkHOO
+      84Oj56kwbscc7KVnIE7L42W4dfVkX++h22RlQ1mac0c6KdnzbQyEF/clYXRv45nPhfnRz8/g
+      /sI9lBhW92Jvq4GmaeTyKie7JnjxcDfJdI5Kl43fe+ZeKty2j32d027ivvYajlwcY3g6SN+4
+      n52tVR86W9+uIgrAJG9/72d0Za40AFzilHcrX3r8QZq9ix+OYsTqcOGyKsiyhKF+D0/73+Sn
+      P/o+OVstex77HK2lEhLrObArxK/eeIUTUZnWfc9xaL0BCQWbzYLRqANJwuTdy/66V+kYbOHA
+      xhIRgGWmAd2jPn749iXiqSwuh4mvPbKJdVVO5E84mGVZ4qGt9ZzoGmcmEKdvws/WdRUYDUs/
+      fMX6AJ9AVVUymQwm0/J0xFprJuYj/OWLp+gd82O3GPj8/Rt48r7mj9T7b6Rp4Asn+NN/OsLQ
+      VJAt6yr49lPbqfeWLqk8Yn0A4Y4JxVL85N1uesf8GBUde9pq2b+t4VMPfgBJAptZYdfGhTag
+      oakgo7Nh8qr6Ka/8dCIAwrJLZXK8eqKfE13j6GSJtgYPT+1pxlNqveVtGA162urLcNpNxJIZ
+      Lo/OE0tmllw2EQBhWeVVlXc/GOGts0Nksnm8LjvP7W+nrqKEz3INK0sSlW47G+s9AHzQP0Mg
+      klxy/yARAGHZaBqc65vhtZP9BKNJDIqOFx7bQmud+7ZGeDntZtobPOh1MrOBOH3jfnL5pVWD
+      RACEZaFpGgOTAX5+tIex2TCyLPG1g5vYtbEK3Uf6utwavU5iXbWLBm8pqqZxrHOcVObGbsOf
+      jQiAUHCapjETiPHzoz10Ds2h08kc3NHIk7ub0cm3f8hJkkRduYOWWjeyJHFpeI4pX3RJZRUB
+      EApK0zSiiQxvnBniRNcEsiyxbX0FX9zfhtGw9F63VrOBDbVunHYTeVXj8IXRJW1PBEAoCE2D
+      eDJD37ifl4/08JvTA+TyKuurXXzxoTbKSy0FabkFaKl1U+1Z6BB3qntySXeDiqglWFhtNA1S
+      mSwT8xEGJoIMzwQZmQ7RO+4HoMpt53N7W2iucS2p6nOjCqeV9dUuesd8+CMJLgzMcP/mutva
+      lgiA8JnlVZXR2TBdw/P0jfuZ8kWZC8WJJtJcuSvpKbXw1J5m7tlQhUEp7IAjnU5m2/oKjl8a
+      YyYQ573zo+xpr72tO0siAMIt0TSN2WCcCwMznOmdZmo+QiSRJp7KoqoLR72ik9nYUMbO1mra
+      GjxUum1YTcvTlXxDbRmVbjuzwThDUwtnn3VVrs+8HRGAu8CVXpaT81GmA1G8LhtOuxmzUUGW
+      pKsNTld/IrH431U3joPQAFXVCMVSnO+f4UTXOEPTIRKpLJlsHlXTkCUJRS/TUF3K7vZqdm6o
+      xuUwY1R06HVywer8N2M06Ni5sYrLoz5iyQynu6doqnR+5n2KAKximgbpbI7ZQIxfHOvlrY7h
+      Dz2v18mU2IyUWE2UWI2U2BZ/Wo04rCacdhMlFiMWkwG9TkIny8iyRCqT49LwHMe7Jrg8Mn/1
+      XrskgVHR47SbqHTb2bWxins3VFG5jFMXfhxJktjbXscr7/cwF0pwfmCGx3evw2k3f6btiACs
+      UulMjplgnI7eKX55rI9A9NqwTZ0soWoLA8794ST+8CcP6dTrZGxmA3azAbvFwMR8lEgiDSwc
+      9FaTgtNuptxpZWO9hx0tXpoqSz8ygOhOc9pN7NhQyeunBvGFE3QOzfHglvrP1MVCBGCVyeVV
+      pv0xLgzOcOTCGP0TfvKqhtWksL7aRVmpBZNBT17VSGdypDI50tk86WyOTDa/8PdMjkwuTyqz
+      8FgurxKKpQjFrk0bYDbqqXTbqS6z01TpZEN9GY3eUsxG/bJWbT6rfVsbeOP0EKFYiq7heXa2
+      VmM23vphLQKwSlyZOa2jd4pTlye5POojkcoiSbCpsZzdbdXsaKm8OpOypkEunyeZzpFMZ0lm
+      cqTSucWfC/+fTGcXns9kF55b/LvVZKC+opSmqlJqy0uwWwxFddBfb321i3pvCcPTIYang0zM
+      h2n+DGOGRQBWgWwuz8muCY50jtE37icYXfimrvE4eGhrHTtbq6mrKEF/XR8bSQJFr0PR63BY
+      P34yKU3TyKsameyVM0Uek0FPidVYtAf99fR6mYe21jM8HWJiPkL/eIB1Va5bviYRAShiqqrR
+      O+7j9VMDXBqexx9JoGlQajPx4NY67t9UR4O3BJPh9qslkiSh10nodQYsq3DgmwTsaKnk5fd7
+      iCTS9E342d1Wjbvk5gPsbyQCUIQ0DWYCMV490cep7gn8kSR5VcOg17FjQyWf29tCU6UTk1H/
+      iWNp1wYJt8PM9mYvhy+M0jvmZ9IXFQFYjbK5PP5IkvcvjPL6qQH8kYW7NyaDntYqJ195uJ3N
+      jeWLp3fpM93tuFtJElhMCns21XDs0jhT/ig9Yz5aat2YbmHQvAhAEcirKoFIkvP9M7x6sp/h
+      6YUJwKwmhaoyOw/vaOTRe5pQCtyl4G6hk2VqPA6aa1xcHvVd7RtU5bZ9atVQBGCFaZpGz6iP
+      Xx7v42T3BJoGRkVHnbeUnRsq2be1gXKXVVR1PoXLYWZzUwW9Y376JwJMzEfwuqzoRACKWzie
+      5uUjPXT0TiMhUVfh4N7WKu5rq6GxshRFL771b4XFqNBc48JdYmY+lKCjd4rNjeVYTJ/cWCfG
+      A6ywruE5hqdDqJpGXYWDbz+9gy/va6Ol1i0O/s9AkiTqK0pYX73QIe5s7xTheOpTXiUCsKKS
+      6RznB2YIxRYudp9/dAubmyqwLFMPyrudu8RCS60bs1GPP5zkwsCnL64nArCCRmaCDE4FyeU1
+      mqqci/Pir3SpVi+9Tqal1o3XtTCV5rsfjHzqa0QAVkgur9I5NMfYbAQJeHzX+g+15Aq3p7lm
+      YdYIWZLoG/czPB38xN8Xn/gKmfJF6RqZJ5vL43Xb2NFSudJFuisYFT1b11VQYjOiahpvf8ri
+      eiIAKyCfVxmaCjI4EQDggc112MzKquh7sxpsaiqnfHHaxXO90wRjH38xLAKwAiKJNJ1Ds0ST
+      GZx2M1vXewsy1bewoKzEwsb6MhS9TCiW4oO+mY/9XRGAO0zTtIX+/It3KLauq6DKbRMNXQUk
+      SRJ7NtViNigkMzk6eqdIf8wMckX1tZNN+hj4oIORqML6nQ/TvDjGOR8d49jb79M3m0Bx1bJt
+      9/201znQk8F36RivnR4ga/ay9f79bK+zI6OSmLzEu0fOMRmXqd9xiAPbvRiI0N/vx+Eop6LC
+      ippPMnTyMMmWR9nsuTP33NPZPJ1Ds/jCCawmhc3ryikp0HI/wjVNlU4aKku5ODjL2FyY4ekQ
+      rfVlH/m9IjoDhOj49RtMqE485hSBq6P4pjn26/PkqrZy4NBBtlXrmOw+x3gEspPn+E1nkra9
+      B9i1zsL46fcZjADxUY6dGcXUeA8PP7CJbNernBrNAmkCgTCJxMIShPHB9zjqr6DWcWc+Bk3T
+      iCczHLk4hgY0VTlZV+Us6Jw5wgKDouOhLQtzBfnCCS4M3rxNoIjOAA52PPksWjbG1GCUa0si
+      l7HzqUPoTAYUnUTerqEOz5JIZxm5NEnF9vvY1FyFki6F/ClGRgO4pUGy5fXcu6kNjzmPFT9H
+      u4fJ1jsXt6mhxvt586jKQ1/bQonxzlU/OodmmZiPoNfJtDV4qPE4xL3/ZbJ3Uy3/9GYniXSW
+      eCp7098pogDIGMwW0BIfnq8DBbNNQdNUsskAY+N+EvkSGlwJhnJuatxW9DoJ2WzBVl6BaSpC
+      VDFR5rFiNeuQZAlrWSMV/T6iOCGXJOSfZOZMByUHvkST+VrVR9O0D90yu/L3G9cOvl15VePX
+      JwfQNKjx2GlvKEOWCrd94cNMBh3/8YUH6B3zsXdT3U0/5yIKwCdRSfpG6R0aJpCt4t7drZTo
+      QuQlHbqFWW4ACSmfJ5dOktZJi2v+LrxaUjXyyQRpgOAwxy9NEHM28+WSD3c5yOfz5HIfvlhS
+      VZV0Ol2QdzEwGaR33I9OlmjwllBTZi3YtoWbq3FbqHEvVIVu9lmvigBk5oe41DOGVrmNh9a7
+      WDhsDZi0OJFMDk0DLZ8jm8uAoxS7PMtMIksup4FeI5dLkLE4cQB42njytx5FmX2f46f7cD+y
+      mdLFT0Gv139oTeBCLpKnqhrvX7oELAxp3NFShbu0cCueC7dnFVx9henp6ENu2s3Oqwc/gBFv
+      eY6B3kkimRzJwAxTw/MYy0sorTATHJ9hNpAkn40y3n2JpKuKa4exQs09+9mgG+TEhWluXjss
+      rCl/lAsDs0hAZZmdzU0Vd2CvwqcpojPAFId/8CaDqQSxSJCUaZSu2hYe2W6ms6uf6MQ0FxdH
+      +psq1rN7124aWrdQe/gkL/+/syAZ8K7fwX2VFszyBlrHT3D6tR9xRNOwlrWw+94ydASu7U5x
+      075nB4G3jnHG+Tj3NdmW9dvgRNc44VgKo0HPtvVenHZx67MYFNE6wQmmByaJqtcVx1RCldtI
+      dD5ALJPjyjM6swOPx4PDJJEKLawSounNuMq9lFr0SGjkEiFm5wIkchL2sirKS03IZIlE0hgM
+      JkwmPZqmkgjOkFA8lNmVjyyUXagqUDCa5L//6Djdw/O4Syz8528doKrMvqRtCksnSZJURGcA
+      C5Xrm7lZlzCb9eMXRDaVemkq9d7wqITe4qS6wXnD4woOx7VKlCTJWF1V3Ppinbfn4uAs0/4Y
+      GrC92Xu1u66w8lbBNcDqFk9lONMzRTCaRCdLPLWn+Y5PJCt8PBGAZaRpGn3jfkZmQmgatNaX
+      0eC98awkrCQRgGWUzubpHplnJhBDliQO7VwnWn2LjAjAMpr2R7k86iObU6ktd7CpoXyliyTc
+      QARgmeTyKoNTC2N+Ae7fXIfdYljhUgk3EgFYJqFYis7BWRKpLGUlFrY0lRd8sThh6UQAloGm
+      acwG4pzvXxiJtHV9Bd5bmKZPuPNEAJZBMpPjTM8koXgaq1lhR0ulGPRSpEQACkzTNELRFMcv
+      jQPQVu+hcXGaDqH4iAAsgw/6Z5gNxjEZdGysL6PcudxtzcLtEgEosEwuz9vnFpYrrS5zsLHe
+      I+b4LGIiAAXWN+5neCqIXiezvnphljKheIkAFJCmabxxeghV03DaTGxZX4HZKCa6LWYiAAU0
+      Pheha2RhOL/XbWNLU4Xo+lDkRAAKRNM0jlwcI5rIYDbq2bWxWrT8rgIiAAXiCyc42ztFJpfH
+      ZTfzwOY60fC1CogAFICmaZztncYfTgCwc2M1Lod5hUsl3AoRgAKIxNN0Ds4STWQwGfQ8vL1h
+      pYsk3CIRgALom1gY9KJqGm0NHmrLS1a6SMItEgFYomQ6S/eIj7lgHAk4dG+TGPK4iogALNGk
+      b2Fl8mxepanKSUude6WLJHwGIgBLkFdVBicDDExeW+nFbjaucKmEz0IEYAkWFmSeJpPN43VZ
+      2dbsFf1+VhkRgCUIRJJcHvMhSbCztZqyEoto+V1limhirNXHbFSoK3eQy2vsbK3CZhYtv6tN
+      EU2NWHw+bWrETDbP2FyYfF6lwVsqFrpbZSRJkkQAPkEhp0cXio8kSZK4BhDWNBEAYU0TARDW
+      NBEAYU0rqtsW+WyC4Ow0obSMq6oR15UexfkEk4MDzMZULM4Kamq82BQJyJOYG2dgKoCqt1FR
+      24C3xICERjY6x8jYDNEMlFSuo8FrQ0eaQCCJ0WjBajWgqVmCk6Pk3E2UW8R3wVpURAFIMnL+
+      NGOBGPFkCo+pkd3VAHkCvac4emEGSSeRl8YIpvZwz0YPuvAIp058wExaQ1JVxmaj3Hf/PZTL
+      fnrOdXB5JgqSijo4Q/7hR2hxRejvn6S8vIHGRgPp+W6OnZmk9UAT5ZaVfv/CSiiiAIBidtHU
+      to6crw/flQdzs5w756dx31PcU6kw1X2OyxO9zDe4kLu78LvaeHL3BozRUTrOXKB3qhWr3Mdw
+      qoR7Dx6g3pGl99RrdHXPsu6B6waoZ+f44MQgJdsOst4pvv3XqiUGQCOXTZNKZlBv+ryE3mDE
+      ZDLcwsWGmbpNWyDhY9h/3cOJOeat69lTYUWnl/FWVjCXmCQcT5INGFm3w4tN0SGXluNtKGd8
+      PkxEzuCqqaKs1IROZ6SqpY3JjhmS1C5uNMvE6WPMerbzWGPJR9YGE9aOJQYgztCpl/jeX/6K
+      4Zs+X87uZ77ON57fi+d2d5FOIzncKJIESOgVPXlVJR6PoEoW3HodkgSSrEMv61HDISJWBbNL
+      Qa+TQNLQSSb0sTki1MLsBV781cvEq3fxra9XY77u6M9mszddKDsej99u6YUit8QAWGna/RX+
+      5O+eRcXPO3/+UzJf+DKH6suQEjOcOXGEGVcdS5oaSq9Hy2QWV4jU0DQNg6KgM1nIajkymraw
+      UDYamk5Gsdqw6P2E8irqYiO3JoNstWMB8LTz9Nf3keh6jbMjMSo3u9BJV3b10YWys9ksRqPo
+      4ny3WmLlV0KvmLA5HDgcKomQhN5gwe6w46gop8xkIdXdh//TN/TxbE5MM6NMxDOoap6AP0Qo
+      nMFutVFqDDI6EyaTV8nHIoQmZ0g7HdhLcvhmI0TjeVQ1Q3i6n3nFjQ1A1mM0lbLj6SdQzr7J
+      B7PJq9U3SZI+8ufjHhd/Vv8fKOhFsIeWrXFe/s37eMKNGDI+LnWPkK5r5dbmR4gx3jVCKBlm
+      dnKaUKgTS9JJfXUlO9ef5b1jZ4lUKfgmZ5E9Wyi36TFsqqfjcCcdmQBKfJbZsJnN20sp1a3D
+      NnCRi+cyVNiyjPeHqH2gHj3Ba7szNfDo5/y88u5JPIfup67UIK4F1qAC3v5wsPXJZ9iijPPO
+      a6/wy9+cIlDawp69G7i1IeIxxru66OwbZS4uk5nqpHNgkkgSanY/wmbTHL2942iuZrZtq8cC
+      6L1bOLjdzfxQL2MRA8277qfeDlhq2b1zHYboOD2Dc7i3P86OGj1gpqLCjd2+0G1ZcW/hwXY9
+      vnAW0SNwbSp8b9B8hsDcNHHVirPchU1ZvbcYRW/Qu5skLXml+Az+8V4unB0gfNPnLVS1tLOp
+      vWbZV2MXhNuxxADkSYRnGOzuZu6mzzvIl9Swob1mabsRhGWyxCqQRn6xISx/0+dlFKMRo1FZ
+      lb3uRBXo7laAKpCETjFhVcQBIqxOq/GLWRAKpoABSDI3NEUwvXhLUcsRC84xMxsmW7idCEJB
+      FTAAc5z+6Xt0B+KLAUgy2X2OE+/3EincTgShoArQEpxkpr+H7t4Ojp27iL1CIlBmR8rFGOoe
+      JF91gH1L34kgLIsCBCBLeG6Ungu9TEXnMPV0o9pNSEiYy5u5f187jqXvRBCWRQFaglUyyQSJ
+      ZD+/+K/HcH7jSfZWliIhoTMYsVjMKKt0unBxG/TuJklSISfGUklH/czOhUnlr/Sv1GNzleEp
+      c7AaFwsVAbi7FaAd4HpRTv/9n/E3HbPo5CubLePep77CV5/bRVnhdiQIBVPAAISYnijn2f/w
+      Rzy7ofzqIBNBKGYFDICb9a0K5wIxkgkbC9V+CZ2ioCh60eImFKUCBiBGKDDCu9//ayaqbCwM
+      uCll4/2PcOiR9qUNixSEZVLAi+AY4519jAdjXBtWbqKstpGmRg+r8TJSXATf3Qp8F+juIwJw
+      d5Okgk6PrpEef58//7cv8MUv/QXnIxO889Lf8A+Hxz6mq7QgrLwCBiDA+//8K3KPHGJbKodm
+      s+Ey28n1DC1tVghBWEYFDEAE/1wFG5rdKLKEls+RTqdFT1ChqBUwAG5adyj0He9iMjHGiVd+
+      znudk5ha6kVfIKFoFfA2qIP2xx5h5sRZdA/mSIxHqNiyj/3ba1flHSBhbVjymOAbJ8fV8klC
+      /ig5nQGboxSH1YzRJMYEC8WnAH2B4gyf+Tnf/6vXGL3p82XsfPqrfP2r993+5LiCsIyWeAZQ
+      yaaTxKNJcgQ4/L9eIv35Z3mkbmFy3I7Tx5n3PMlX99eI3qBC0SlAO4CMYrRSWlZGWZmOdFiP
+      2VaKu8xNWW0NXpuDzFInxxWEZVTQyXGbt0R45Y3jVMabMGZ8XLw8QrK6WVwEC0WroF0hsrMd
+      /ORHb3J5PkQur8dRt5lDTz/NvbWrc2JEUQW6uxWoL1Aa39gsKcWIgSzxWJT5mSniqhWXt4KK
+      Mg9ut01cAwhFp0AjwuKMX7zEvN1Eur+TM/1TpK8+52TT/id46omtuJa+I0EouAKcAbJE5oJk
+      dDLZSJBANHld5zcDJR4vlZWlGJZY0JUgzgB3t4J3h84loyQ0I3azAlqeVCqFpjNjMeoKtYs7
+      SgTg7lbgQfGTvPpf/pbwM7/H8zu8yPkwl955jfO+Jr70zb1LqALliQ2f5McvvT7GkmoAAAVW
+      SURBVMOQP4O9up39TxzingYXejVC/+Ff8JPDl8lYqtn92LM8srUKIxnmuw/z4q+PMR6Vadzz
+      JZ57tI0Sxc/p0xN4PA00NpaSS85z+le/hL3fYG91US2ZLNwhBfxXT5OMmTFf+bKUJCRNQ0st
+      sUdoboy3fjPJjuf/Dd/06JnvOc0Hl88y4n6EionjHA038Z1/91uYA90cP3GUzsovsFXXzdFe
+      lT1f/UO+5Ulz5tcvcbirlqe3LawoCYCaZKLjXUarHue3xMG/ZhW0HaD1niw/fv1d3JENWOMj
+      dPROY91x/9J6g2Zy5EqdlJn0SJIeW4kbtzuMTIaxkQwb723BbVbQlTfQ1OxnbDJAUPbjaKqn
+      3utAUVQ27NqO7+Io6W3exY3mCY90cHaugceerVqV/ZSEwihgAOy0P/Ysu3/+NqeO+bFKKWzr
+      7uPAzoZbXCXyY1jquK95gkun3qFTk0BTKK9vxmtP0S2V4jYryBJIioLRZkMZjxA1GXF4DCiK
+      BJKEwezGkZkmhheik5wfGiCR0Wh77Glc1x39+XweVb225r2mLaxLnE6nb1Iw4W5Q0HO/7FjH
+      o1+rYW8gRk5nwlpixbTUBgA1Ryqrw2QyoWqgZXJk0ynS2RIWlse+3sIBf+OURBoszlIBSDoM
+      BiPpdJB05tau/yVJTHJ0typgAAKc/uErBHd9nsdbq5FyEXrOvM9grJZ9h9qw3+5m57s54zdz
+      cN82PFaZ9EwfZ/omGfNXYNFC+BMZ1mkgZbOkomEyjnps0ihDkTSZjIbVoJFNzBNSnAtlsHlp
+      a6rFLV3m14ePUf2VR6ldXAhep9Oh0127Y6WqKqqqYjCsxpu4wq0o6JjgoXNB8gYNkJD0kI2E
+      mO2fJr6UzRr1ZKem8SUzqJpGIhEmFIwCZuqbTHSf7sWXyBCZGWKgz4+72oWrzkNkcISRmTDZ
+      pI/LJ84h1zVgvLpRHY66nTx8T4733uhBVHDWrgKeAZxU1k5ztGOcB8styLFphsZGiZW3LG2J
+      1JItfOFAhB/9w3/nB4Ec9spWHnjkEBu9CgbvAzwy/wu+999eJ2er48HPPceWcj162jiwxc/P
+      fvo/eTGio+3g8zzTbkUijV6vQ5YlkI2UNT/EPZMv8ubFCp7c4hQXw2tQQRvC0mNv8+ff/TH9
+      ugrKc9OoVfv4F995ns3u1XloiYawu9uyTIyVz/gY6pkiY7DjKnNg0huxlYrOcELxKXBLMKDm
+      SMczpJM+Bi9fYGYmgattDwcf3SI6wwlFackB0NQsMf8EfZc6udQ7zNTsHDO+SXxjVrY+9xhb
+      q8uW1g4gCMtoiVWgBCPn3uYXL50h6fLi8Vbh9ZRgkIY4+oMcX/7ed9ikX531fxBVoLtdAapA
+      Rsobd7D/cT1dF85z5v0O3ssZaVjnIkI1mrivIhS5pV8EaxqqmiObTpPKJImMD/DOuy/x9utd
+      RJwbefqF3+G5x9spKVCB7yRxBri7Lev06Go+TXBsBF/GSuWGmlU5PaIIwN1NrA/wKUQA7m4F
+      mBcoRywwx8xUkDQJZgcmCKSyiEQJq8USA5Bi6nIHxw53E8rPc/pnh+kOxkUAhFVjiXeBFAxy
+      koFz7zGRq2HyXB+OcvCV2ReTZca7vo32tuql9QcShGWyxAAYqNq0lydyes5fOkdnYp5wXw9M
+      mxb75DvI2KpoaasuQFEFofAKchs0n8+STo1x9IcXsR7cRZvLthgAGcVowmQ2sBrnhRAXwXe3
+      At8F0lCzSUK+Cbou9BA3V7GhrYUqpx2jfnWOqBIBuLsVOABZZk/8gD/7+7PgtCGnY6RNjTz5
+      L7/NY21OcQYQio4kSdL/B6wPXdWIk/VYAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
