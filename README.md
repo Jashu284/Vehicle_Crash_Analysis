@@ -1,7 +1,8 @@
-Traffic Accident Analysis and Visualization Project
+**Traffic Accident Analysis and Visualization Project**
+
 This project focuses on analyzing real-time traffic accident data from state government portals to uncover insights into accident trends, contributing factors, and high-risk areas. The project leverages a comprehensive data pipeline, integrating tools such as Alteryx, Azure Data Factory, Talend, Snowflake, Tableau, and Power BI for an end-to-end solution.
 
-Project Overview
+**Project Overview**
 Traffic accidents are a significant concern for urban planning and traffic management. This project addresses the need for actionable insights by:
 
 Collecting and analyzing 4.5M+ rows of real-time traffic data from state government portals of New York, Chicago, and Austin.
